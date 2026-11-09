@@ -1,0 +1,13 @@
+name = "Weapons Expanded"
+filename = "weaponsexpanded_1.21.1_1.9.3_neoforge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "87721109250b0c8bc2157a45ae1abd203f654c84"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8663342
+project-id = 1271198

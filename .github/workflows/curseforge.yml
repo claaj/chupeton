@@ -1,0 +1,91 @@
+# Publica el modpack en CurseForge al hacer push de un tag "vX.Y.Z".
+#
+# Configuración (GitHub -> Settings -> Secrets and variables -> Actions):
+#   Secret    CF_API_TOKEN   token de https://authors.curseforge.com/account/api-tokens
+#   Variable  CF_PROJECT_ID  ID numérico del proyecto en CurseForge
+#
+# Uso:  git tag v1.0.1 && git push origin v1.0.1
+
+name: Publicar en CurseForge
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      release_type:
+        description: "Tipo de release"
+        type: choice
+        options: [release, beta, alpha]
+        default: release
+
+env:
+  MC_VERSION: "1.21.1"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Instalar packwiz
+        run: go install github.com/packwiz/packwiz@latest
+
+      - name: Tomar la versión del tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        run: sed -i "s/^version = .*/version = \"${GITHUB_REF_NAME#v}\"/" pack.toml
+
+      - name: Exportar para CurseForge
+        id: export
+        run: |
+          packwiz refresh
+          NAME=$(sed -n 's/^name = "\(.*\)"/\1/p' pack.toml)
+          VERSION=$(sed -n 's/^version = "\(.*\)"/\1/p' pack.toml)
+          FILE="$NAME-$VERSION.zip"
+          packwiz -y curseforge export -o "$FILE"
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+          echo "display=$NAME $VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Subir a CurseForge
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_PROJECT_ID: ${{ vars.CF_PROJECT_ID }}
+          RELEASE_TYPE: ${{ inputs.release_type || 'release' }}
+          FILE: ${{ steps.export.outputs.file }}
+          DISPLAY: ${{ steps.export.outputs.display }}
+        run: |
+          set -euo pipefail
+          : "${CF_API_TOKEN:?Falta el secret CF_API_TOKEN}"
+          : "${CF_PROJECT_ID:?Falta la variable CF_PROJECT_ID}"
+          API=https://minecraft.curseforge.com/api
+          AUTH="X-Api-Token: $CF_API_TOKEN"
+
+          # "1.21.1" -> tipo "minecraft-1-21" -> ID numérico de la versión
+          SLUG="minecraft-$(echo "$MC_VERSION" | cut -d. -f1,2 | tr . -)"
+          TYPE_ID=$(curl -sf -H "$AUTH" "$API/game/version-types" \
+            | jq --arg s "$SLUG" '.[] | select(.slug == $s) | .id')
+          GV_ID=$(curl -sf -H "$AUTH" "$API/game/versions" \
+            | jq --arg v "$MC_VERSION" --argjson t "$TYPE_ID" \
+                 '[.[] | select(.name == $v and .gameVersionTypeID == $t) | .id][0]')
+          [ "$GV_ID" != "null" ] || { echo "No encontré la versión $MC_VERSION"; exit 1; }
+
+          META=$(jq -n --arg n "$DISPLAY" --arg r "$RELEASE_TYPE" --argjson gv "$GV_ID" \
+            --arg c "Publicado automáticamente desde ${GITHUB_REPOSITORY}@${GITHUB_SHA::7}" \
+            '{displayName: $n, releaseType: $r, gameVersions: [$gv],
+              changelog: $c, changelogType: "markdown"}')
+
+          curl --fail-with-body -H "$AUTH" \
+            -F "metadata=$META" -F "file=@$FILE" \
+            "$API/projects/$CF_PROJECT_ID/upload-file"
+
+      - name: Adjuntar al GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.export.outputs.file }}

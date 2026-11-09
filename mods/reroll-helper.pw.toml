@@ -1,0 +1,13 @@
+name = "Reroll Helper"
+filename = "villager_reroller-neoforge-1.1.1-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fa34a789e8497b189b132826694a6f4c36649604"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9422550
+project-id = 1760724
