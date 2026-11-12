@@ -21,6 +21,10 @@ file = "config/waystones-common.toml"
 hash = "b322818134918049e8848017efc85943965dcd45d6c81acc98085ae310bc0eaa"
 
 [[files]]
+file = "config/xaerominimap_entities.json"
+hash = "5ac0eeb7d7c2753f19fefc3e86759e662b9493dd646c3466ad3580ae2920aa0f"
+
+[[files]]
 file = "defaultconfigs/create-server.toml"
 hash = "cd072bd0106ffe0d370110ebab6aa8425be1e95b460f836076c4ceafbe1cbe7d"
 
