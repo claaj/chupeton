@@ -1,0 +1,3 @@
+# Simply Swords requires Simply Tooltips, so the mod stays installed,
+# but its translucent tabbed tooltip is turned off; Legendary Tooltips draws them instead.
+enableTooltipRendering = false

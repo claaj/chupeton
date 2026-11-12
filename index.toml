@@ -17,6 +17,10 @@ file = "config/fallingtree.json"
 hash = "b6954c2bccf480c3bc4e02b9daf1c9c7d8fc44e81cc983832c24e08cb6b700f0"
 
 [[files]]
+file = "config/simplytooltips/config.toml"
+hash = "0fbab37455b25d61d8975be546f55cacf5ded63f34ecd88725d0332d4432a162"
+
+[[files]]
 file = "config/waystones-common.toml"
 hash = "b322818134918049e8848017efc85943965dcd45d6c81acc98085ae310bc0eaa"
 
@@ -364,6 +368,11 @@ hash = "7211de0ddeab153fc2bf9588f5922de705006be507002ec03cb9f8e6b67ab4cf"
 metafile = true
 
 [[files]]
+file = "mods/legendary-tooltips.pw.toml"
+hash = "0004f14a9f41e930775229f57d22b2df5e09f43b138f8dcedd4429161e00c377"
+metafile = true
+
+[[files]]
 file = "mods/let-me-despawn.pw.toml"
 hash = "7da9f19f8e2d0a66dc618ff6ad7063b31218ff01cfbca0930b47d3de8d7af427"
 metafile = true
@@ -461,6 +470,11 @@ metafile = true
 [[files]]
 file = "mods/prickle.pw.toml"
 hash = "eab2f56ff9135b3b7253ea5a73deae2f887e2876f5f0432936044a6e926937b4"
+metafile = true
+
+[[files]]
+file = "mods/prism-lib.pw.toml"
+hash = "f39355b06c16d2161d3e5c0d327effec99af44d49a608f6d52d939827b73d584"
 metafile = true
 
 [[files]]
