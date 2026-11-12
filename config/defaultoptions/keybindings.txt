@@ -1,0 +1,2 @@
+key_key.sophisticatedbackpacks.open_backpack:key.keyboard.b
+key_gui.xaero_new_waypoint:key.keyboard.n
