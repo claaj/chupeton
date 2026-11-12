@@ -141,11 +141,6 @@ hash = "3ed1023f1adc6e29f8fb634a494a960b60fb3316541d9feb33002d8be657962e"
 metafile = true
 
 [[files]]
-file = "mods/create-fantastic-weapons.pw.toml"
-hash = "55401c638cc31162fc1d921eca3b980cb0908030e5816227b28bb0eadbd8810f"
-metafile = true
-
-[[files]]
 file = "mods/create-industry.pw.toml"
 hash = "27ba9439d6b25314cfca911c474a9a34933dc7a25b4ee42ae3f2782f8d03b676"
 metafile = true
