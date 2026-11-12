@@ -1,0 +1,6 @@
+[kinetics]
+	#Configure how Spawner blocks can be moved by contraptions.
+	#Allowed Values: MOVABLE, NO_PICKUP, UNMOVABLE
+	movableSpawners = "MOVABLE"
+	#Whether minecart contraptions can be placed into container items.
+	minecartContraptionInContainers = true

@@ -1,0 +1,20 @@
+[settings]
+	#Allow all blocks to be picked up, not just Tile Entites. White/Blacklist will still be respected.
+	pickupAllBlocks = true
+	#Allow hostile mobs to be picked up
+	pickupHostileMobs = true
+	#Allow babies to be carried even when grown up ones are blacklisted
+	allowBabies = true
+
+[blacklist]
+	#Blocks that cannot be picked up. Kept to things that break when moved:
+	#double blocks, portals, immovable tags and Create multiblocks (belts, tanks).
+	forbiddenTiles = [
+		"#forge:immovable", "#forge:relocation_not_supported",
+		"#neoforge:immovable", "#neoforge:relocation_not_supported", "#c:relocation_not_supported",
+		"minecraft:end_portal", "minecraft:end_gateway", "minecraft:nether_portal", "minecraft:piston_head",
+		"minecraft:tall_grass", "minecraft:large_fern", "minecraft:peony", "minecraft:rose_bush",
+		"minecraft:lilac", "minecraft:sunflower", "minecraft:big_dripleaf_stem", "minecraft:tall_seagrass",
+		"minecraft:*_bed", "minecraft:*_door", "minecraft:cake",
+		"create:*", "create*:*", "copycats:*", "tfmg:*", "bellsandwhistles:*", "sliceanddice:*"
+	]

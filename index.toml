@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/carryon-common.toml"
+hash = "1bf68952dfd5d2436d4af842052aacf3f1c079895236cda7e979a3e04aae9d1a"
+
+[[files]]
 file = "config/defaultoptions/keybindings.txt"
 hash = "4c0734356975ae6f141319cb1f5b531e497d35ebe9455261ad582178f9c0fd4a"
 
@@ -15,6 +19,10 @@ hash = "b6954c2bccf480c3bc4e02b9daf1c9c7d8fc44e81cc983832c24e08cb6b700f0"
 [[files]]
 file = "config/waystones-common.toml"
 hash = "b322818134918049e8848017efc85943965dcd45d6c81acc98085ae310bc0eaa"
+
+[[files]]
+file = "defaultconfigs/create-server.toml"
+hash = "cd072bd0106ffe0d370110ebab6aa8425be1e95b460f836076c4ceafbe1cbe7d"
 
 [[files]]
 file = "mods/advancement-plaques.pw.toml"
