@@ -1,6 +1,6 @@
 name = "Ears (+ Snouts/Muzzles, Tails, Horns, Wings, and More)"
 filename = "ears-buzz-neoforge-2.2.1-c.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
