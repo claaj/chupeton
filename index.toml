@@ -5,6 +5,18 @@ file = "config/defaultoptions/keybindings.txt"
 hash = "4c0734356975ae6f141319cb1f5b531e497d35ebe9455261ad582178f9c0fd4a"
 
 [[files]]
+file = "config/defaultoptions/options.txt"
+hash = "927fb71b6bfd50c9a61a844a1bf46a32308e17fac1dd1b378002c9c317aae981"
+
+[[files]]
+file = "config/fallingtree.json"
+hash = "b6954c2bccf480c3bc4e02b9daf1c9c7d8fc44e81cc983832c24e08cb6b700f0"
+
+[[files]]
+file = "config/waystones-common.toml"
+hash = "b322818134918049e8848017efc85943965dcd45d6c81acc98085ae310bc0eaa"
+
+[[files]]
 file = "mods/advancement-plaques.pw.toml"
 hash = "7329db8d8b0fe08ac02a3b2ad816fa9f2081c5b2067f449c36c01b84ded7bf13"
 metafile = true

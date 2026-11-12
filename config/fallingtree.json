@@ -1,0 +1,6 @@
+{
+  "trees": {
+    "maxSize": 2147483647,
+    "maxScanSize": 2147483647
+  }
+}

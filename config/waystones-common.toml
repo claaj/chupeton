@@ -1,0 +1,3 @@
+[teleports]
+	#Set to false to simply disable all xp costs. See warpRequirements for more fine-grained control.
+	enableCosts = false

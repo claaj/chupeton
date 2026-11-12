@@ -1,0 +1,3 @@
+autoJump:false
+narrator:0
+pauseOnLostFocus:false
