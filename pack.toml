@@ -1,12 +1,12 @@
 name = "Chupeton"
 author = "claaj"
-version = "0.2.0"
+version = "0.2.1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "0f9b6256677e8c0aea2c450a60a16c10a0e0b6e79b0d40a28acb2924c8df711c"
+hash = "5c80fb80acde509dd43ad0771524326968bbe23c09c620d8dfa9c15298c6c4b9"
 
 [versions]
 minecraft = "1.21.1"

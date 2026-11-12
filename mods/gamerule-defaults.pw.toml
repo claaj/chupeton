@@ -1,0 +1,13 @@
+name = "Gamerule Defaults"
+filename = "gamerule_defaults-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a2d2545f9116e8bbdecb5ed2148f7bc0330ccd26"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8641855
+project-id = 1651053

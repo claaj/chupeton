@@ -1,0 +1,4 @@
+#A list of gamerule defaults to apply, formatted as "gameRuleName=value".
+#Applied on every server start, so it also covers existing worlds.
+#playersSleepingPercentage=1 -> a single sleeping player skips the night.
+defaults = ["playersSleepingPercentage=1"]

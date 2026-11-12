@@ -17,6 +17,10 @@ file = "config/fallingtree.json"
 hash = "b6954c2bccf480c3bc4e02b9daf1c9c7d8fc44e81cc983832c24e08cb6b700f0"
 
 [[files]]
+file = "config/gamerule_defaults-common.toml"
+hash = "e414a4c0540013a418bde787089f91d4481bf93e1bd9f711ffb3f0d680eec6cc"
+
+[[files]]
 file = "config/simplytooltips/config.toml"
 hash = "0fbab37455b25d61d8975be546f55cacf5ded63f34ecd88725d0332d4432a162"
 
@@ -290,6 +294,11 @@ metafile = true
 [[files]]
 file = "mods/fzzy-config.pw.toml"
 hash = "0431771ba664f762587b1d876b0cd0ef4ca0751aed1a5604dfb5f4190f29d409"
+metafile = true
+
+[[files]]
+file = "mods/gamerule-defaults.pw.toml"
+hash = "70a14a4569bb95db1af133fef84a3a089ceeffe966e2af7799e1b3399982a170"
 metafile = true
 
 [[files]]
