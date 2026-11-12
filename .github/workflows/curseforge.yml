@@ -92,8 +92,9 @@ jobs:
             '{displayName: $n, releaseType: $r, gameVersions: [$gv],
               changelog: $c, changelogType: "markdown"}')
 
+          # --form-string: -F would treat ';' in the changelog as a field-parameter separator
           curl --fail-with-body -H "$AUTH" \
-            -F "metadata=$META" -F "file=@$FILE" \
+            --form-string "metadata=$META" -F "file=@$FILE" \
             "$API/projects/$CF_PROJECT_ID/upload-file"
 
       - name: Attach to GitHub Release
