@@ -1,13 +1,13 @@
 # Publishes the modpack to CurseForge when a GitHub Release with tag "vX.Y.Z" is published.
-#   Regular release -> "release" on CurseForge
-#   Pre-release     -> "alpha" on CurseForge
+#   Every tagged release (pre-release or not) -> "release" on CurseForge.
+#   For beta/alpha, run the workflow manually (workflow_dispatch) and pick the type.
 # The release description is used as the CurseForge changelog.
 #
 # Setup (GitHub -> Settings -> Secrets and variables -> Actions):
 #   Secret    CF_API_TOKEN   token from https://authors.curseforge.com/account/api-tokens
 #   Variable  CF_PROJECT_ID  numeric CurseForge project ID
 #
-# Usage:  gh release create v1.0.1 [--prerelease] --notes "..."
+# Usage:  gh release create v1.0.1 --notes "..."
 
 name: Publish to CurseForge
 
@@ -66,7 +66,7 @@ jobs:
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_PROJECT_ID: ${{ vars.CF_PROJECT_ID }}
-          RELEASE_TYPE: ${{ inputs.release_type || (github.event.release.prerelease && 'alpha') || 'release' }}
+          RELEASE_TYPE: ${{ inputs.release_type || 'release' }}
           CHANGELOG: ${{ github.event.release.body }}
           FILE: ${{ steps.export.outputs.file }}
           DISPLAY: ${{ steps.export.outputs.display }}
