@@ -1,0 +1,13 @@
+name = "Nicktale API"
+filename = "nicktaleapi-0.3.1-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d5e2eabbdb15570003c0bf955eac66fcff340847"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9426774
+project-id = 1721283

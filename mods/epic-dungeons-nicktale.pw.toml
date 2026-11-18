@@ -1,0 +1,13 @@
+name = "Epic Dungeons Nicktale "
+filename = "nicktaleepicdungeons-0.22.1-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5facda2517494948c2aaf2af66f4f291011c2a90"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 9631244
+project-id = 1766774

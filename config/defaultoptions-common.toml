@@ -1,0 +1,6 @@
+# The default difficulty selected for newly created worlds.
+defaultDifficulty = "HARD"
+# Set to true if the difficulty for new world's should be locked to the specific default.
+lockDifficulty = false
+# Resource pack IDs to have enabled by default on the first run.
+defaultResourcePacks = []

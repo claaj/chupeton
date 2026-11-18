@@ -1,0 +1,13 @@
+name = "Kings & Monsters"
+filename = "kingsandmonsters1.2.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c84ab64b845947ce53e46a3a7d6807102033b566"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8788347
+project-id = 1585531

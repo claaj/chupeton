@@ -1,6 +1,6 @@
 name = "Simply Tooltips"
 filename = "SimplyTooltips-neoforge-0.1.5.jar"
-side = "client"
+side = "both"
 
 [download]
 hash-format = "sha1"
